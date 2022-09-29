@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* Formatação Geral */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+p {
+  text-align: justify;
+  display: block;
+}
+
+input[type=radio] {
+  /* display: none; */
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+/* header */
+
+header {
+  height: 60px;
+  background-color: rgb(142, 247, 135);
+  padding: 0px 30px;
+}
+
+header h2 {
+  padding-top: 15px;
+}
+
+/* banner de promoções */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 30px;
+  padding: 30px 20px;
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -o-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.card div img {
+  margin: 20px 10px;
+  width: 500px;
+}
+
+.promocao {
+  position: absolute;
+  font-weight: 500;
+  font-size: 18px;
+  right: 50px;
+  bottom: 60px;
+}
+
+.promocao h3 {
+  margin-bottom: 10px;
+}
+
+.valor-antigo {
+  color: blue;
+  text-decoration: line-through;
+}
+
+.valor-promocao {
+  color: red;
+  font-size: 22px;
+}
+
+/* Formatação carrossel */
+
+img {
+  width: 360px;
+}
+
+.img {
+  height: 250px;
+}
+
+.carrossel-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 30px;
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -o-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+}
+
+.carrossel {
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.carrossel .slides {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+
+  -webkit-transition: transform .8s;
+  -moz-transition: transform .8s;
+  -o-transition: transform .8s;
+  transition: transform .8s;
+}
+
+#check:checked~.texto-descricao,  
+#check2:checked~.texto-descricao2,
+#check3:checked~.texto-descricao3,
+#check4:checked~.texto-descricao4,
+#check5:checked~.texto-descricao5,
+#check6:checked~.texto-descricao6
+{
+  display: block;
+}
+
+.descricao p {
+  display: none;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: rgb(232, 230, 230);
+}
+
+label {
+  display: block;
+}
+
+/* navegação fica embaixo do carrossel */
+.carrossel .slidesNavigation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 22px;
+}
+
+.carrossel .slidesNavigation label {
+  margin: 6px;
+  height: 10px;
+  width: 10px;
+  border: solid 2px #13f662;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.carrossel .slidesNavigation label:hover {
+  cursor: pointer;
+}
+
+.label-detalhes {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 8px 0px;
+}
+
+.label-detalhes:hover {
+  font-weight: 500;
+  color: #4413f6;
+}
+
+.preco-produto {
+  font-size: 20px;
+  font-weight: 500;
+  color: #13f662;
+}
+
+
+.carrossel #radio-1:checked~.slidesNavigation label#dotForRadio-1,
+.carrossel #radio-2:checked~.slidesNavigation label#dotForRadio-2,
+.carrossel #radio-3:checked~.slidesNavigation label#dotForRadio-3,
+.carrossel #radio-4:checked~.slidesNavigation label#dotForRadio-4 {
+  background: #13f662;
+}
+
+#radio-1:checked~.slides {
+  transform: translateX(0%);
+}
+
+#radio-2:checked~.slides {
+  transform: translateX(-25%);
+}
+
+#radio-3:checked~.slides {
+  transform: translateX(-50%);
+}
+
+#radio-4:checked~.slides {
+  transform: translateX(-75%);
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+/* Formatação footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  background-color: rgb(142, 247, 135);
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer>* {
+  padding: 15px 30px;
+}
