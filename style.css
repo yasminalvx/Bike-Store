@@ -48,10 +48,10 @@ header h2 {
   flex-direction: column;
   margin: 30px 30px;
   padding: 30px 20px;
-  -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  -o-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
 .card h2 {
@@ -109,10 +109,10 @@ img {
   flex-direction: column;
   margin-right: 30px;
   padding: 20px;
-  -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  -o-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
-  box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
 .carrossel {
@@ -135,13 +135,12 @@ img {
   transition: transform .8s;
 }
 
-#check:checked~.texto-descricao,  
+#check:checked~.texto-descricao,
 #check2:checked~.texto-descricao2,
 #check3:checked~.texto-descricao3,
 #check4:checked~.texto-descricao4,
 #check5:checked~.texto-descricao5,
-#check6:checked~.texto-descricao6
-{
+#check6:checked~.texto-descricao6 {
   display: block;
 }
 
