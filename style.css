@@ -21,7 +21,7 @@ p {
 }
 
 input[type=radio] {
-  /* display: none; */
+  display: none;
 }
 
 input[type=checkbox] {
