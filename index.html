@@ -6,16 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
+  <title>Bike Store</title>
 </head>
 
 <body>
   <!-- Nome da loja -->
   <header>
     <h2>Bike Store</h2>
+    <img src="img/car.svg" width="20" height="20" onclick="openNav()">
   </header>
 
-
+  <div id="sidebar"> 
+    <button onclick="closeNav()">&times;</button>
+    <div id="sidebar-conteudo">
+      <ul id="carrinho">
+      </ul>
+      <div class="total">
+        <h4>Total:</h4>
+        <span id="valor-total"></span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <!-- Conteúdo página -->
@@ -24,7 +35,6 @@
       <div class="card">
         <h2> NÃO PERCA ESSA PROMOÇÃO!</h2>
         <div>
-          <img src="https://oggibikes.com.br/wp-content/uploads/2019/03/hacker-24-amarelo-scaled.jpg" alt="" />
           <img src="https://oggibikes.com.br/wp-content/uploads/2019/03/hacker-24-azul-rosa-scaled.jpg" alt="">
         </div>
         <div class="promocao">
@@ -75,6 +85,7 @@
               estilo, conforto e muita segurança!
             </p>
             <strong class="preco-produto">R$ 3.000,50</strong>
+            <button onclick="addProdutoCarrinho('1')"> Comprar </button>
           </div>
         </div>
         <div class="produto">
@@ -90,6 +101,7 @@
               pedaladas e procuram o melhor custo beneficio!
             </p>
             <strong class="preco-produto">R$ 2.590,00</strong>
+            <button onclick="addProdutoCarrinho('2')"> Comprar </button>
           </div>
         </div>
         <div class="produto">
@@ -110,6 +122,7 @@
               quadro e com um novo grafismo.
             </p>
             <strong class="preco-produto">R$ 3.690,50</strong>
+            <button onclick="addProdutoCarrinho('3')"> Comprar </button>
           </div>
         </div>
         <div class="produto">
@@ -126,6 +139,7 @@
               sendo o grupo Shimano DEORE de 11 velocidades, BOOST (148mm).
             </p>
             <strong class="preco-produto">R$ 7.590,00</strong>
+            <button onclick="addProdutoCarrinho('4')"> Comprar </button>
           </div>
         </div>
         <div class="produto">
@@ -139,9 +153,10 @@
             <p class="texto-descricao5">
               O modelo de alta performance da marca subiu mais um nível. Além
               de contar com o novo cassete 10-52, agora a máquina vem equipada
-              com o câmbio SRAM GX Lunar 12v
+              com o câmbio SRAM GX Lunar 12v.
             </p>
             <strong class="preco-produto">R$ 12.380,00</strong>
+            <button onclick="addProdutoCarrinho('5')"> Comprar </button>
           </div>
         </div>
         <div class="produto">
@@ -159,6 +174,7 @@
               alumínio mais eficiente e capaz disponível.
             </p>
             <strong class="preco-produto">R$ 13.990,00</strong>
+            <button onclick="addProdutoCarrinho('6')"> Comprar </button>
           </div>
         </div>
       </ul>
@@ -180,6 +196,8 @@
     <h2>Bike Store</h2>
     <p>&copy; 2022</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
