@@ -77,9 +77,7 @@ class Produto {
 }
 
 function addProdutoCarrinho(id) {
-  const listaCarrinho = localStorage.getItem("listaCarrinho")
-    ? JSON.parse(localStorage.getItem("listaCarrinho"))
-    : [];
+  const listaCarrinho = localStorage.getItem("listaCarrinho") ? JSON.parse(localStorage.getItem("listaCarrinho")) : [];
   const produto = listaProdutos.find((x) => x.id === id);
   if (listaCarrinho.find((x) => x.id == id)) {
     const index = listaCarrinho.findIndex((x) => x.id == id);
@@ -120,7 +118,7 @@ function closeNav() {
 }
 
 function gerarCarrinho() {
-    const listaCarrinho = JSON.parse(localStorage.getItem("listaCarrinho"));
+    const listaCarrinho = localStorage.getItem("listaCarrinho") ? JSON.parse(localStorage.getItem("listaCarrinho")) : [];
 
     const carrinhoUl = document.querySelector("#carrinho");
     carrinhoUl.innerHTML = '';
@@ -129,12 +127,31 @@ function gerarCarrinho() {
         carrinhoUl.innerHTML += `
             <li class="item-carrinho">
             <img src="${item.img}">
-            <strong> ${item.quantidade} x </strong> 
+            <div class="quantidade">
+              <button onclick="deleteProdutoCarrinho('${item.id}')"> - </button>
+              <span> ${item.quantidade}x </span> 
+              <button onclick="addProdutoCarrinho('${item.id}')"> + </button>
+            </div>
             <span> ${item.nome} </span>
             <strong>R$ ${(item.quantidade * item.preco).toFixed(2)}</strong>
             </li>`;
     }
 
     document.querySelector('#valor-total').innerHTML = `R$ ${getTotal().toFixed(2)}`
+
+}
+
+function deleteProdutoCarrinho(id) {
+  const listaCarrinho = localStorage.getItem("listaCarrinho") ? JSON.parse(localStorage.getItem("listaCarrinho")) : [];
+  const produto = listaCarrinho.find((x) => x.id === id);
+  if (produto && produto.quantidade > 1) {
+    const index = listaCarrinho.findIndex((x) => x.id == id);
+    listaCarrinho[index].quantidade = listaCarrinho[index].quantidade - 1;
+  } else if (produto.quantidade == 1) {
+    listaCarrinho.splice(listaCarrinho.findIndex((x) => x.id == id), 1);
+  }
+
+  localStorage.setItem("listaCarrinho", JSON.stringify(listaCarrinho));
+  gerarCarrinho();
 
 }
